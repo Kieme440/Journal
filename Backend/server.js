@@ -8,6 +8,8 @@ dotenv.config();
 const app = express();
 connectDB();
 const PORT = process.env.PORT;
+
+app.use(express.json());
 app.use("/api/journal", journalRoute);
 
 

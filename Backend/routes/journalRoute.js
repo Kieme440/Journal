@@ -1,12 +1,13 @@
 import express from "express";
 
-import { getJournals, updateJournal, createJournal, deleteJournal } from "../controllers/journalController.js";
+import { getJournals, findJournal, createJournal, updateJournal, deleteJournal } from "../controllers/journalController.js";
 
 const route = express.Router();
 
 route.get("/", getJournals);
-route.post("/", updateJournal);
-route.put("/:id", createJournal);
+route.get("/:id", findJournal);
+route.post("/", createJournal);
+route.put("/:id", updateJournal);
 route.delete("/:id", deleteJournal);
 
 export default route;
